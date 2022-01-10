@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import SignInForm from '../components/signInForm';
 
 export default function Home() {
   return (
@@ -11,7 +12,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}></h1>
+        <h1 className={styles.main__title}>Welcome to reMote</h1>
+        <h2 className={styles.main__text}>
+          reMote is a project management tool. Built on Next, it's a sandbox to
+          try out things and ideas within a fully featured React application.
+        </h2>
+        <SignInForm />
       </main>
     </div>
   );
