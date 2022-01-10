@@ -19,7 +19,7 @@ mongoose
 app.use(express.json());
 app.use(helmet());
 app.use(
-  (res, next) => (
+  (req, res, next) => (
     res.setHeader('Access-Control-Allow-Origin', '*'),
     res.setHeader(
       'Access-Control-Allow-Headers',
