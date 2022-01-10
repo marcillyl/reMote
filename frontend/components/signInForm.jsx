@@ -13,7 +13,7 @@ export default function SignInForm() {
       }),
     });
     if (signIn.status === 403 || signIn.status != 200) {
-      return (feedback.innerHTML = 'Error, please try again!');
+      return (feedback.innerHTML = 'Error, please try again');
     }
     {
       const data = await signIn.json();
