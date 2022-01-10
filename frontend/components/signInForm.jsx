@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from '../styles/Home.Form.module.css';
 export default function SignInForm() {
   const signIn = async (e) => {
@@ -50,12 +49,6 @@ export default function SignInForm() {
         </button>
         <p id='feedback' className={styles.feedback}></p>
       </form>
-      <p className={styles.check}>
-        Don't have an account?{' '}
-        <Link href='/signup'>
-          <a className={styles.check__link}>Click here</a>
-        </Link>
-      </p>
     </div>
   );
 }

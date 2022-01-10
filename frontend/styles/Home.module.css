@@ -21,3 +21,9 @@
   font-size: 1.4em;
   line-height: 1.7em;
 }
+.check {
+  font-size: 1.1em;
+}
+.check__button {
+  color: aqua;
+}

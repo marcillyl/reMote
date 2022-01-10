@@ -28,7 +28,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background: #111;
-  font-size: 12pt;
   color: white;
 }
 img {
@@ -55,6 +54,7 @@ button {
   border: none;
   cursor: pointer;
   color: white;
+  font-size: 1em;
 }
 input,
 textarea {
