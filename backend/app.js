@@ -16,7 +16,6 @@ mongoose
     console.log('Unable to connect to MongoDB Atlas!');
     console.log(error);
   });
-
 app.use(express.json());
 app.use(helmet());
 app.use(
