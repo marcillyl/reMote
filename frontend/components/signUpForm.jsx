@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import Link from 'next/link';
 import styles from '../styles/Home.Form.module.css';
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [signedUp, setSignedUp] = useState(false);
   const signUp = async (e) => {
     e.preventDefault();
     const feedback = document.getElementById('feedback');
@@ -22,18 +20,8 @@ export default function SignUpForm() {
     if (signUp.status != 201) {
       return (feedback.innerHTML = 'Error, please try again');
     }
-    setSignedUp(true);
+    window.location.reload();
   };
-  if (signedUp) {
-    return (
-      <div>
-        <h3>Your account has been created !</h3>
-        <Link href='/'>
-          <a>Click here to sign in</a>
-        </Link>
-      </div>
-    );
-  }
   return (
     <div className={styles.main}>
       <form onSubmit={signUp} className={styles.form}>

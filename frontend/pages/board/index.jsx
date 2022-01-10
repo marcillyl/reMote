@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Board.module.css';
+import styles from '../../styles/Board.module.css';
 export default function Board() {
   return (
     <div className={styles.container}>
@@ -10,7 +10,10 @@ export default function Board() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}></h1>
+        <h1 className={styles.main__title}>Hello,</h1>
+        <h2 className={styles.main__text}>
+          here you'll find an overview of your projects.
+        </h2>
       </main>
     </div>
   );
