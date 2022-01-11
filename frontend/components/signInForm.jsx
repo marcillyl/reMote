@@ -16,8 +16,9 @@ export default function SignInForm() {
       return (feedback.innerHTML = 'Error, please try again');
     }
     {
-      const data = await signIn.json();
-      sessionStorage.setItem('user', data.token);
+      const res = await signIn.json();
+      sessionStorage.setItem('_token', res.token);
+      sessionStorage.setItem('_id', res.id);
       window.location.href = '/board';
     }
   };

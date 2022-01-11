@@ -20,7 +20,7 @@ exports.signup = async (req, res) => {
       password: await bcrypt.hash(req.body.password, 10),
     });
     await user.save();
-    res.status(201).json({ message: 'User created!' });
+    res.status(201).json({ message: '' });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -47,7 +47,7 @@ exports.signin = async (req, res) => {
         expiresIn: '1h',
       }
     );
-    res.status(200).send({ token: token });
+    res.status(200).send({ token: token, id: user._id });
   } catch (error) {
     res.status(500).send(error);
   }

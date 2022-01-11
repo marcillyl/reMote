@@ -3,7 +3,21 @@ import Layout from '../../components/layout';
 import styles from '../../styles/User.module.css';
 export default function User() {
   const disconnect = () => {
-    sessionStorage.removeItem('user');
+    sessionStorage.clear();
+    window.location.href = '/';
+  };
+  const deleteUser = async () => {
+    const feedback = document.getElementById('feedback');
+    feedback.innerHTML = '';
+    const userId = sessionStorage.getItem('_id');
+    const deleteUser = await fetch(`http://127.0.0.1:4000/api/user/${userId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (deleteUser.status != 200) {
+      return (feedback.innerHTML = 'Error, please try again');
+    }
+    sessionStorage.clear();
     window.location.href = '/';
   };
   return (
@@ -23,8 +37,11 @@ export default function User() {
           <button onClick={disconnect} className={styles.user__button}>
             Disconnect
           </button>
-          <button className={styles.user__button}>Delete account</button>
+          <button onClick={deleteUser} className={styles.user__button}>
+            Delete account
+          </button>
         </section>
+        <p id='feedback' className={styles.feedback}></p>
       </main>
     </div>
   );
