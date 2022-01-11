@@ -37,9 +37,9 @@ export default function User() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.main__title}>My profile</h1>
+        <h1 className={styles.main__title}>Your profile,</h1>
         <h2 className={styles.main__text}>
-          Manage your account from this page.
+          manage your account from this page.
         </h2>
         <section className={styles.user}>
           <button onClick={disconnect} className={styles.user__button}>
