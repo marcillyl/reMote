@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import styles from '../../styles/Board.module.css';
-export default function Board() {
+import styles from '../../styles/User.module.css';
+export default function User() {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,6 +19,6 @@ export default function Board() {
     </div>
   );
 }
-Board.getLayout = function getLayout(page) {
+User.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

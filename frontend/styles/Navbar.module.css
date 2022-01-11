@@ -1,0 +1,16 @@
+.nav {
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  width: 100vw;
+  height: 40pt;
+  padding: 0px 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #ffffff11;
+}
+.nav__link {
+  padding: 3px;
+  margin: 0px 12px;
+}
