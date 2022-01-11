@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Layout from '../../components/layout';
-import styles from '../../styles/Board.module.css';
-export default function Board() {
+import styles from '../../styles/Create.module.css';
+export default function Create() {
   const checkToken = async () => {
     const token = sessionStorage.getItem('_token');
     if (!token) {
@@ -11,6 +10,7 @@ export default function Board() {
     }
   };
   checkToken();
+  const createProject = (e) => {};
   return (
     <div className={styles.container}>
       <Head>
@@ -20,18 +20,17 @@ export default function Board() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.main__title}>Hello,</h1>
-        <h2 className={styles.main__text}>
-          here you'll find an overview of your projects.
-        </h2>
-        <section className={styles.projects}></section>
-        <Link href='/create'>
-          <a className={styles.main__link}>Create project</a>
-        </Link>
+        <h1 className={styles.main__title}>Alright,</h1>
+        <h2 className={styles.main__text}>let's configure your new project.</h2>
+        <form onSubmit={createProject}>
+          <button type='submit' className={styles.form__button}>
+            Create
+          </button>
+        </form>
       </main>
     </div>
   );
 }
-Board.getLayout = function getLayout(page) {
+Create.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
