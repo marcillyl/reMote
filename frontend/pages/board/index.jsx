@@ -2,6 +2,14 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import styles from '../../styles/Board.module.css';
 export default function Board() {
+  const checkToken = async () => {
+    const token = sessionStorage.getItem('_token');
+    if (!token) {
+      sessionStorage.clear();
+      window.location.href = '/';
+    }
+  };
+  checkToken();
   return (
     <div className={styles.container}>
       <Head>

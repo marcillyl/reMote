@@ -2,6 +2,14 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import styles from '../../styles/User.module.css';
 export default function User() {
+  const checkToken = async () => {
+    const token = sessionStorage.getItem('_token');
+    if (!token) {
+      sessionStorage.clear();
+      window.location.href = '/';
+    }
+  };
+  checkToken();
   const disconnect = () => {
     sessionStorage.clear();
     window.location.href = '/';
