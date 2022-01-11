@@ -21,3 +21,17 @@
   font-size: 1.4em;
   line-height: 1.7em;
 }
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0px;
+}
+.user__button {
+  margin: 12px;
+  padding: 10px 24pt;
+  font-size: 1.1em;
+  color: aqua;
+  border: solid 1.5pt aqua;
+}

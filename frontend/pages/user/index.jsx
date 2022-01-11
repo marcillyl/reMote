@@ -2,6 +2,10 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import styles from '../../styles/User.module.css';
 export default function User() {
+  const disconnect = () => {
+    sessionStorage.removeItem('user');
+    window.location.href = '/';
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -11,10 +15,16 @@ export default function User() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.main__title}>Hello,</h1>
+        <h1 className={styles.main__title}>My profile</h1>
         <h2 className={styles.main__text}>
-          here you'll find an overview of your projects.
+          Manage your account from this page.
         </h2>
+        <section className={styles.user}>
+          <button onClick={disconnect} className={styles.user__button}>
+            Disconnect
+          </button>
+          <button className={styles.user__button}>Delete account</button>
+        </section>
       </main>
     </div>
   );
