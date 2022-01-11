@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const authRoutes = require('./routes/auth.route');
+const userRoutes = require('./routes/user.route');
 const app = express();
 mongoose
   .connect(process.env.DB_URI, {
@@ -33,4 +34,5 @@ app.use(
   )
 );
 app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
 module.exports = app;
