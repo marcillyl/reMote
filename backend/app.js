@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const authRoutes = require('./routes/auth.route');
 const userRoutes = require('./routes/user.route');
+const projectRoutes = require('./routes/project.route');
+const stepRoutes = require('./routes/step.route');
+const taskRoutes = require('./routes/task.route');
 const app = express();
 mongoose
   .connect(process.env.DB_URI, {
@@ -35,4 +38,7 @@ app.use(
 );
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/project', projectRoutes);
+app.use('/api/step', stepRoutes);
+app.use('/api/task', taskRoutes);
 module.exports = app;
