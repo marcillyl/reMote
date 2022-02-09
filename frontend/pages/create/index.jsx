@@ -18,20 +18,19 @@ export default function Create() {
     const userId = sessionStorage.getItem('_id');
     const feedback = document.getElementById('feedback');
     feedback.innerHTML = '';
-    const createProject = await fetch(
-      `http://127.0.0.1:4000/api/project/${userId}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title,
-          content,
-        }),
-      }
-    );
+    const createProject = await fetch('http://127.0.0.1:4000/api/project/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId,
+        title,
+        content,
+      }),
+    });
     if (createProject.status != 201) {
       return (feedback.innerHTML = 'Error, please try again');
     }
+    window.location.href = '/board';
   };
   return (
     <div className={styles.container}>
